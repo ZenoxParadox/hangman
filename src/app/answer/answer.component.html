@@ -1,0 +1,7 @@
+<!-- {{ secret }} -->
+<hr />
+<span *ngFor="let letter of letters">
+  <button class="btn" [ngClass]="getLetterClass(letter)">
+    {{ getLetter(letter) }}
+  </button>
+</span>

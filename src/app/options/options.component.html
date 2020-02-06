@@ -1,0 +1,10 @@
+<button
+  *ngFor="let char of alphabeth"
+  type="button"
+  class="btn"
+  (click)="guessLetter(char)"
+  [disabled]="isGuessedLetter(char) || isGameOver"
+  [ngClass]="getLetterClass(char)"
+>
+  {{ char }}
+</button>

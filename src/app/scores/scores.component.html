@@ -1,0 +1,50 @@
+<div class="modal-header">
+  <h4 class="modal-title">Scores</h4>
+  <button
+    type="button"
+    class="close"
+    aria-label="Close"
+    (click)="modal.dismiss('Cross click')"
+  >
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <table class="table table-hover">
+    <!-- header -->
+    <thead>
+      <tr>
+        <th></th>
+        <th scope="col">word</th>
+        <th scope="col">counts remain</th>
+        <th scope="col">time it took</th>
+        <th scope="col">date</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <!-- data -->
+      <tr class="table-active" *ngFor="let game of games; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ game.secret }}</td>
+        <td>{{ game.getRemainingGuesses() }}</td>
+        <td>{{ game.getDuration() }} seconds</td>
+        <td>{{ game.getGameEnd() | date: "shortTime" }}</td>
+      </tr>
+
+      <!-- empty -->
+      <tr *ngIf="games.length === 0">
+        <td colspan="5" class="nodata">No games won yet.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="modal-footer">
+  <button
+    type="button"
+    class="btn btn-light"
+    (click)="modal.close('Close click')"
+  >
+    Close
+  </button>
+</div>

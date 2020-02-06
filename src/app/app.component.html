@@ -1,0 +1,55 @@
+<div class="container">
+  <div class="jumbotron">
+    <h1 class="display-3">Hangman</h1>
+    <p class="lead">3D Hubs - The Engineering Challenge; Killian Bos</p>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card text-white bg-dark mb-4">
+        <div class="card-header">Buttons</div>
+        <div class="card-body">
+          <button type="button" class="btn btn-success" (click)="newGame()">
+            New game
+          </button>
+          <button type="button" class="btn btn-info" (click)="showScores()">
+            Scores
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-8">
+      <div class="card text-white bg-dark mb-4">
+        <div class="card-header">Canvas</div>
+        <div class="card-body">
+          <app-canvas></app-canvas>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card text-white bg-dark mb-4">
+        <div class="card-header">
+          Available letters (Picks left: {{ guessesLeft }})
+        </div>
+        <div class="card-body">
+          <app-options></app-options>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card text-white bg-dark mb-4">
+        <div class="card-header">Answer</div>
+        <div class="card-body">
+          <app-answer></app-answer>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
